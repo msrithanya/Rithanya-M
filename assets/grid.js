@@ -85,6 +85,7 @@ function updateSelectedVariant() {
 function cancel() {
   document.getElementById("popupOverlay").style.display = "none";
   document.querySelectorAll('.button-grid p#card_content').forEach(el => el.innerText = "ADD TO CART");
+   location.reload();
 }
 
 // Color selection
@@ -147,7 +148,7 @@ function clicked(event){
     .then(data => {
         // Update button text
         if(add_to_cart_flag === 0){
-            document.getElementById("cart_content").innerHTML = "ADDED[Refresh]";
+            document.getElementById("cart_content").innerHTML = "ADDED";
             add_to_cart_flag = 1;
         } else if(add_to_cart_flag=== 1){
             document.getElementById("cart_content").innerHTML = "ADD TO CART";

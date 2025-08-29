@@ -1,0 +1,149 @@
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Product Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Product Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Product Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image4",
+      "label": "Product Image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image5",
+      "label": "Product Image 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image6",
+      "label": "Product Image 6"
+    }
+  ]
+}
+{% endschema %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ 'Document' | escape }}</title>
+    {{ 'fonts.css' | asset_url | stylesheet_tag }}
+    {{ 'banner.css' | asset_url | stylesheet_tag }}
+    {{ 'grid.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+    <div id="grid_section">
+      <p id="grid_title" class="lustria-font">Tisso vision in the wilds.</p>
+      <div id="grid">
+        {% assign product1 = all_products['black-leather-bag'] %}
+        {% assign product2 = all_products['blue-silk-tuxedo'] %}
+        {% assign product3 = all_products['chequered-red-shirt'] %}
+        {% assign product4 = all_products['classic-leather-jacket'] %}
+        {% assign product5 = all_products['classic-varsity-top'] %}
+        {% assign product6 = all_products['dark-denim-top'] %}
+        <!-- Product 1 -->
+        <div class="product">
+          <img src="{{ section.settings.image1 | img_url: '500x' }}" class="pimage" id="img1" alt="Product image 1">
+          <img src="{{ 'view.svg' | asset_url }}" id="view_icon1" onclick="check( this.id)" alt="View icon 1">
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+          <img src="{{ section.settings.image2 | img_url: '500x' }}" class="pimage" id="img2" alt="Product image 2">
+          <img src="{{ 'view.svg' | asset_url }}" id="view_icon2" onclick="check( this.id)" alt="View icon 2">
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+          <img src="{{ section.settings.image3 | img_url: '500x' }}" class="pimage" id="img3" alt="Product image 3">
+          <img src="{{ 'view.svg' | asset_url }}" id="view_icon3" onclick="check( this.id)" alt="View icon 3">
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product">
+          <img src="{{ section.settings.image4 | img_url: '500x' }}" class="pimage" id="img4" alt="Product image 4">
+          <img src="{{ 'view.svg' | asset_url }}" id="view_icon4" onclick="check( this.id)" alt="View icon 4">
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product">
+          <img src="{{ section.settings.image5 | img_url: '500x' }}" class="pimage" id="img5" alt="Product image 5">
+          <img src="{{ 'view.svg' | asset_url }}" id="view_icon5" onclick="check( this.id)" alt="View icon 5">
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product">
+          <img src="{{ section.settings.image6 | img_url: '500x' }}" class="pimage" id="img6" alt="Product image 6">
+          <img src="{{ 'view.svg' | asset_url }}" id="view_icon6" onclick="check(this.id)" alt="View icon 6">
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup Overlay -->
+    <div id="popupOverlay" onclick="cancel()" style="display:none;">
+      <div id="popup" onclick="event.stopPropagation()">
+        <img src="{{ 'Cancel.svg' | asset_url }}" id="cancel" onclick="cancel()" alt="Cancel icon">
+        <div id="product_details">
+          <img src="" id="product_i" alt="Product image">
+          <div id="product_details_left">
+            <p id="product_title">Product Name</p>
+            <p class="lustria-font" id="price">Price</p>
+            <p id="dis">Description</p>
+          </div>
+        </div>
+
+        <!-- Color Section -->
+        <p class="title">Color</p>
+        <div id="color_container">
+          <div onclick="selectColor(this)" id="color1" class="color">
+            <div class="color_picket" id="color1_picket"></div>
+            <p class="color_name" id="color1_name">Variant 1</p>
+          </div>
+          <div onclick="selectColor(this)" id="color2" class="color">
+            <div class="color_picket" id="color2_picket"></div>
+            <p class="color_name" id="color2_name">Variant 2</p>
+          </div>
+        </div>
+
+        <!-- Size Section -->
+        <p class="title">Size</p>
+        <div id="size_out">
+          <div id="size_container">
+            <p id="size">Choose your size</p>
+            <div onclick="dropdown()" id="dropdown_container">
+              <img src="{{ 'arrow_close.svg' | asset_url }}" id="dropdown_closeed" alt="Dropdown icon">
+              <img src="{{ 'arrow_open.svg' | asset_url }}" id="dropdown_opened" alt="Dropdown icon">
+            </div>
+          </div>
+          <div id="drop"></div>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <form class="add-to-cart-form" id="addToCartForm">
+          <input type="hidden" name="id" id="variant_id" value="">
+          <button type="submit" id="dark" class="button-grid" onclick="clicked(event)">
+            <p id="cart_content" class="primary_font">ADD TO CART</p>
+            <img src="{{ 'Arrow_white.svg' | asset_url }}" id="animated-arrow-grid">
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="{{ 'grid.js' | asset_url }}" async></script>
+  </body>
+</html>

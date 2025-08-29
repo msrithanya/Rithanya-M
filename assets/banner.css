@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+}
+.banner_nav{
+    background-color:#F5F5F5 ;
+    display: flex;
+    align-items: center;
+    padding: 10px 50px;
+    justify-content: space-between;
+    z-index:10;
+}
+#nav_content{
+    width: fit-content;
+}
+.primary_font{
+    font-family: 'Jost', sans-serif;
+   
+}
+p{
+     font-weight: 400;
+    line-height: 20.48px;
+    font-size: 1.11vw;
+}
+.button-hover-effect img{
+    width:24px;
+}
+.button-hover-effect{
+    display: flex;
+    padding: 11px 22px 11px 41px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    width: fit-content;
+}
+Button img{
+    margin-left: 18px;
+}
+#high{
+    background-color: #FFF544;
+}
+ .button-hover-effect:hover .animated-arrow {
+            transform: translateX(6px);
+        }
+ .animated-arrow {
+            transition: transform 0.3s ease-in-out;
+        }
+    .button-hover-effect:hover {
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    #bg_img{
+        width: 100vw;
+     
+    }
+    #Hero_content{
+        display: flex;
+      
+    }
+    #content{
+        width: 35vw;
+        margin-left: 4.65vw;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center; */
+    }
+     #content Button{
+        margin-top: 4.63vh;
+     }
+    #bg1{
+        width: 65vw;
+        
+    }
+      #bg1 img{
+        width: 100%;
+        height: 100%;
+    }
+    #Tisso-h1{
+        width: fit-content;
+        margin-top: 3.47vh;
+        font-size: 4.86vw;
+        font-weight: 500;
+    }
+        #Tisso-h2{
+            width: fit-content;
+            margin-top: 4.63vh;
+        font-size: 1.39vw;
+        font-weight: 400;
+        line-height: 140%;
+    }
+    #dark{
+        background-color:#000000;
+        color: white;
+       
+    }
+    #size_content{
+        background-color: #F5F5F5;
+ display: flex;
+       justify-content: center;
+       padding-top:10px;
+       padding-bottom: 10px;
+       height:34px;
+    }
+    #size_content p{
+        font-size:16px;
+        font-family: 'Jost', sans-serif;
+    }
+    h3{
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 120%;
+        margin-top: 6.25vh;
+    }
+    .lustria-font {
+  font-family: 'Lustria', serif;
+}
+ #siteLogo{
+    width:152px !important;
+ }
+#menu_icon{
+    display:none;
+}
+.banner-section{
+    margin-bottom:90px;
+}
+#mobile_menu{
+    display:none;
+}
+#mobile_bg{
+display:none;
+}
+.desktop-text { display: block; }
+.mobile-text { display: none; }
+#mobile_content{
+    display:none;
+}
+@media screen and (max-width: 425px) {
+    #Hero_content{
+        display:none;
+    }
+ 
+ #menu_icon{
+    width:18px;
+    height:10px;
+    display:block;
+    position:absolute;
+    left:16px;
+   top:27.5px
+}
+ .button-hover-effect{
+    display:none;
+ }
+ #nav_content{
+    display:none;
+ }
+ .banner_nav{
+    display:block;
+    position:relative;
+    height:65px;
+    padding:0px 0px;
+    width:100vw;
+
+ }
+ #logo{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+ }
+#close_img{
+      display:none;
+}
+#bg1,#bg_img{
+    display:none;
+}
+ #mobile_menu{
+    width:100vw;
+    height:124px;
+    background-color:#F2F2F2;
+   display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:absolute;
+    top:164px;
+ } 
+ #mobile_nav_content{
+    font-size:16px;
+
+ }
+.banner-section{
+    margin-bottom:40px;
+ }
+ .mobile_button-hover-effect{
+    display:flex;
+    border:none;
+    padding:11px 25px 11px 57px;
+    margin-top:16px;
+    transition: all 0.3s ease-in-out;
+ }
+ 
+ .mobile_button-hover-effect:hover{
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+ }
+
+ .mobile_button-hover-effect p{
+        font-size:16px;
+ }
+.mobile_button-hover-effect img{
+    width:28.29px;
+    margin-left:29.88px;
+}
+  #Hero_content{
+        display: block;
+      
+    }
+    #mobile_content{
+        width:100%;
+        margin-top:49px;
+        /* margin:49px 16px 0 16px; */
+         display:flex;
+         flex-direction:column;
+         align-items:center;
+    }
+    #mobile_content h1{
+       font-size:30px;
+    }
+    #mobile_content h2{
+       font-size:16px;
+       margin-top:24px;
+       text-align: center;     /* center both lines */
+  white-space: normal;    /* allow text to wrap */
+  word-break: break-word;
+    }
+    #mobile_bg{
+        width:100%;
+        overflow: hidden; /* hide image overflow */
+  position: relative;
+  display:block;
+    }
+    .mobile_button-dark{
+        display:flex;
+    border:none;
+    padding:11px 20px 11px 36px;
+    position:absolute;
+    bottom:39px;
+    left:90px;
+    transition: all 0.3s ease-in-out;
+    }
+    .mobile_button-dark:hover{
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+ }
+    .mobile_button-dark p{
+        font-size:16px;
+ }
+
+    .mobile_button-dark img{
+            width:24px;
+    }
+    #size_content p{
+        font-size:14px;
+    }
+     .desktop-text { display: none; }
+  .mobile-text { display: block; }
+  #content{
+    display:none;
+  }
+  #Tisso-h1{
+    margin-top:0;
+  }
+}

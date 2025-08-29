@@ -1,0 +1,134 @@
+{% schema %}
+{
+  "name": "Banner Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "nav_content",
+      "label": "Navigation Text",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "high_btn_text",
+      "label": "Top Button Text",
+      "default": "CHOOSE GIFT"
+    },
+    {
+      "type": "text",
+      "id": "Tisso_h1",
+      "label": "Heading (H1)",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "Tisso_h2",
+      "label": "Subheading (H2)",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    },
+    {
+      "type": "textarea",
+      "id": "Tisso_h2_mobile",
+      "label": "Subheading (H2_Mobile)",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination."
+    },
+    {
+      "type": "text",
+      "id": "dark_btn_text",
+      "label": "Hero Button Text",
+      "default": "CHOOSE GIFT"
+    },
+    {
+      "type": "text",
+      "id": "size_content",
+      "label": "Size Content (Desktop)",
+       "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    },
+    {
+      "type": "text",
+      "id": "size_content_mobile",
+      "label": "Size Content (Mobile)",
+       "default": "SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR"
+    },
+    {
+      "type": "text",
+      "id": "Mhigh_btn_text",
+      "label": "Mobile Hero Button Text",
+      "default": "SHOP NOW"
+    }
+  ]
+}
+{% endschema %}
+{{ 'banner.css' | asset_url | stylesheet_tag }}
+<div class="banner-section">
+  <nav class="banner_nav">
+      <div onclick="open_menu()" id="menu_icon">
+        <img id="menu_img" src="{{ 'menu.svg' | asset_url }}" alt="menu">
+         <img id="close_img" src="{{ 'Cancel.svg' | asset_url }}" alt="menu">
+    </div>
+    <div id="logo">
+      {% if section.settings.logo %}
+        <img src="{{ section.settings.logo | image_url }}" alt="Logo"id="siteLogo">
+      {% endif %}
+    </div>
+    <p class="primary_font" id="nav_content">
+      {{ section.settings.nav_content }}
+    </p>
+
+    <button class="button-hover-effect" id="high">
+      <p class="primary_font">{{ section.settings.high_btn_text }}</p>
+      {{ 'Arrow 1.svg' | asset_url | img_tag: class: 'animated-arrow' }}
+    </button>
+  </nav>
+  <div id=mobile_menu>
+    <p class="primary_font" id="mobile_nav_content">
+      {{ section.settings.nav_content }}
+    </p>
+    <button class="mobile_button-hover-effect" id="high">
+      <p class="primary_font">{{ section.settings.high_btn_text }}</p>
+      {{ 'Arrow 1.svg' | asset_url | img_tag: class: 'animated-arrow' }}
+    </button>
+  </div>
+<img src="{{ 'bg.svg' | asset_url }}" alt="bg" id="bg_img">
+
+  <div id="Hero_content">
+    <div id="content">
+      <h1 class="primary_font" id="Tisso-h1">{{ section.settings.Tisso_h1 }}</h1>
+      <h2 class="primary_font" id="Tisso-h2">{{ section.settings.Tisso_h2 }}</h2>
+
+      <button class="button-hover-effect" id="dark">
+        <p class="primary_font">{{ section.settings.dark_btn_text }}</p>
+        {{ 'Arrow_white.svg' | asset_url | img_tag: class: 'animated-arrow' }}
+      </button>
+    </div>
+     <div id="mobile_content">
+      <h1 class="primary_font" id="Tisso-h1">{{ section.settings.Tisso_h1 }}</h1>
+      <h2 class="primary_font" id="Tisso-h2">{{ section.settings.Tisso_h2_mobile }}</h2>
+    </div>
+    <div id="mobile_bg">
+      <img src="{{ 'mobile_bg.svg' | asset_url }}" alt="bg" id="mb_img">
+       <button class="mobile_button-dark" id="dark">
+      <p class="primary_font">{{ section.settings.Mhigh_btn_text }}</p>
+      {{ 'Arrow_white.svg' | asset_url | img_tag: class: 'animated-arrow' }}
+    </button>
+    </div>
+    <div id="bg1">
+      {{ 'half_bg.svg' | asset_url | img_tag }}
+    </div>
+  </div>
+
+  <div id="size_content">
+  <p class="primary_font desktop-text">
+    {{ section.settings.size_content }}
+  </p>
+  <p class="primary_font mobile-text">
+    {{ section.settings.size_content_mobile }}
+  </p>
+  </div>
+</div>
+<script src="{{ 'banner.js' | asset_url }}" async></script>
